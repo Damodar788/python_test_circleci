@@ -21,3 +21,10 @@ jobs:
           name: Deploy to Production
           command: |
             # Add your deployment steps here
+      - run:
+          name: Start SSH agent
+          command: eval $(ssh-agent -s)
+      - run:
+          name: Add SSH key to agent
+          command: ssh-add /root/.ssh/id_rsa
+
